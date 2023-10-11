@@ -1,9 +1,10 @@
 from pages.base_page import BasePage
-from locators.main_page_locators import MainPageLocators
+from locators.locators import MainPageLocators
 
 
 class MainPage(BasePage):
     locators = MainPageLocators()
+
 
     def click_to_order_button_header(self):
         self.element_is_clickable(self.locators.ORDER_BUTTON_HEADER).click()
@@ -71,3 +72,11 @@ class MainPage(BasePage):
 
     def get_accordion_panel_text_7(self):
         return self.element_is_visible(self.locators.ACCORDION_PANEL_7).text
+
+    def click_order_button_roadmap(self):
+        element = self.element_is_visible(self.locators.ORDER_BUTTON_ROADMAP)
+        self.go_to_element(element)
+        element.click()
+
+    def click_order_button_header(self):
+        self.element_is_clickable(self.locators.ORDER_BUTTON_HEADER).click()
