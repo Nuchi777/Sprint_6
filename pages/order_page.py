@@ -1,11 +1,6 @@
-import time
-import re
-
 from selenium.webdriver import Keys
-
 from pages.base_page import BasePage
 from locators.locators import OrderPageLocators
-import datetime
 import random
 from faker import Faker
 
@@ -18,19 +13,17 @@ class OrderPage(BasePage):
     def fill_all_fields_person(self):
         self.element_is_visible(self.locators.NAME).send_keys(faker.first_name())
         self.element_is_visible(self.locators.SURNAME).send_keys(faker.last_name())
-        self.element_is_visible(self.locators.DELIVERY_ADDRESS).send_keys(f"{faker.street_title()}, {faker.building_number()}")
-        self.element_is_visible(self.locators.METRO_STATION_LIST).send_keys(random.choice([' Новокосино', ' Бауманская', ' Таганская', ' Фили']))
+        self.element_is_visible(self.locators.DELIVERY_ADDRESS).send_keys("г. Москва, ул. Ленина, д. 18")
+        self.element_is_visible(self.locators.METRO_STATION_LIST).send_keys(random.choice(['А', 'Б', 'В', 'Г', 'Д', 'Е', 'С', 'П']))
         self.element_is_visible(self.locators.METRO_STATION).click()
         self.element_is_visible(self.locators.TEL_NUMBER).send_keys(f"+7{random.choice(['925', '916', '903', '965'])}{random.randint(1000000, 9999999)}")
 
     def fill_all_fields_rent(self):
-        date_today = str(datetime.date.today())
-        date_tomorrow = str(int(date_today[-2:]) + 1)
-        self.element_is_visible(self.locators.DELIVERY_DATE).send_keys(date_tomorrow)
+        self.element_is_visible(self.locators.DELIVERY_DATE).send_keys(f"{faker.date_this_month(before_today=False, after_today=True)}")
         self.element_is_visible(self.locators.DELIVERY_DATE).send_keys(Keys.RETURN)
         self.element_is_visible(self.locators.RENT_PERIOD).click()
-        self.element_is_visible(self.locators.RENT_PERIOD_SELECTED).click()
-        self.element_is_visible(self.locators.CHECKBOX_COLOR_SCOOTER).click()
+        self.element_is_visible(random.choice(self.locators.RENT_PERIOD_LIST)).click()
+        self.element_is_visible(random.choice(self.locators.CHECKBOX_COLOR_SCOOTER_LIST)).click()
         self.element_is_visible(self.locators.COMMENT_FOR_COURIER).send_keys('Позвонить за час!')
 
     def click_order_button(self):

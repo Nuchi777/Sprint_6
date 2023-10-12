@@ -46,8 +46,14 @@ class OrderPageLocators:
     # Про аренду
     DELIVERY_DATE = (By.XPATH, "//input[@placeholder='* Когда привезти самокат']")
     RENT_PERIOD = (By.XPATH, "//div[@class='Dropdown-control']")
-    RENT_PERIOD_SELECTED = (By.XPATH, "//div[@class='Dropdown-option' and text()='сутки']")
-    CHECKBOX_COLOR_SCOOTER = (By.CSS_SELECTOR, "input[id='black']")
+    RENT_PERIOD_LIST = [(By.XPATH, "//div[@class='Dropdown-option' and text()='сутки']"),
+                        (By.XPATH, "//div[@class='Dropdown-option' and text()='двое суток']"),
+                        (By.XPATH, "//div[@class='Dropdown-option' and text()='трое суток']"),
+                        (By.XPATH, "//div[@class='Dropdown-option' and text()='четверо суток']"),
+                        (By.XPATH, "//div[@class='Dropdown-option' and text()='пятеро суток']"),
+                        (By.XPATH, "//div[@class='Dropdown-option' and text()='шестеро суток']"),
+                        (By.XPATH, "//div[@class='Dropdown-option' and text()='семеро суток']")]
+    CHECKBOX_COLOR_SCOOTER_LIST = [(By.CSS_SELECTOR, "input[id='black']"), (By.CSS_SELECTOR, "input[id='grey']")]
     COMMENT_FOR_COURIER = (By.XPATH, "//input[@placeholder='Комментарий для курьера']")
     ORDER_BUTTON = (By.XPATH, "//button[@class='Button_Button__ra12g Button_Middle__1CSJM']")
 
