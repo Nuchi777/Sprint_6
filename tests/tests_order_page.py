@@ -9,6 +9,7 @@ class TestOrderPage:
     def test_order_scooter(self, driver):
         # создали объект класса главной страницы
         main_page = MainPage(driver)
+        # открыли тестовую страницу
         main_page.open('https://qa-scooter.praktikum-services.ru/')
         # кликнули по кнопке "Заказать" внизу страницы
         main_page.click_order_button_roadmap()
@@ -26,6 +27,7 @@ class TestOrderPage:
         order_page.click_yes_button()
         # проверяем, что всплывающее окно "Заказ оформлен" появилось
         assert order_page.check_status_window_is_visible()
+
 
 
 

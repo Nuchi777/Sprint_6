@@ -3,29 +3,33 @@ from selenium.webdriver.common.by import By
 
 class MainPageLocators:
     # Сколько это стоит? И как оплатить?
-    ACCORDION_HEADING_0 = (By.ID, "accordion__heading-0")
-    ACCORDION_PANEL_0 = (By.ID, "accordion__panel-0")
+    ACCORDIAN_TITLE_0 = (By.ID, "accordion__heading-0")
+    ACCORDIAN_CONTENT_0 = (By.ID, "accordion__panel-0")
     # Хочу сразу несколько самокатов! Так можно?
-    ACCORDION_HEADING_1 = (By.ID, "accordion__heading-1")
-    ACCORDION_PANEL_1 = (By.ID, "accordion__panel-1")
+    ACCORDIAN_TITLE_1 = (By.ID, "accordion__heading-1")
+    ACCORDIAN_CONTENT_1 = (By.ID, "accordion__panel-1")
     # Как рассчитывается время аренды?
-    ACCORDION_HEADING_2 = (By.ID, "accordion__heading-2")
-    ACCORDION_PANEL_2 = (By.ID, "accordion__panel-2")
+    ACCORDIAN_TITLE_2 = (By.ID, "accordion__heading-2")
+    ACCORDIAN_CONTENT_2 = (By.ID, "accordion__panel-2")
     # Можно ли заказать самокат прямо на сегодня?
-    ACCORDION_HEADING_3 = (By.ID, "accordion__heading-3")
-    ACCORDION_PANEL_3 = (By.ID, "accordion__panel-3")
+    ACCORDIAN_TITLE_3 = (By.ID, "accordion__heading-3")
+    ACCORDIAN_CONTENT_3 = (By.ID, "accordion__panel-3")
     # Можно ли продлить заказ или вернуть самокат раньше?
-    ACCORDION_HEADING_4 = (By.ID, "accordion__heading-4")
-    ACCORDION_PANEL_4 = (By.ID, "accordion__panel-4")
+    ACCORDIAN_TITLE_4 = (By.ID, "accordion__heading-4")
+    ACCORDIAN_CONTENT_4 = (By.ID, "accordion__panel-4")
     # Вы привозите зарядку вместе с самокатом?
-    ACCORDION_HEADING_5 = (By.ID, "accordion__heading-5")
-    ACCORDION_PANEL_5 = (By.ID, "accordion__panel-5")
+    ACCORDIAN_TITLE_5 = (By.ID, "accordion__heading-5")
+    ACCORDIAN_CONTENT_5 = (By.ID, "accordion__panel-5")
     # Можно ли отменить заказ?
-    ACCORDION_HEADING_6 = (By.ID, "accordion__heading-6")
-    ACCORDION_PANEL_6 = (By.ID, "accordion__panel-6")
+    ACCORDIAN_TITLE_6 = (By.ID, "accordion__heading-6")
+    ACCORDIAN_CONTENT_6 = (By.ID, "accordion__panel-6")
     # Я живу за МКАДом, привезёте?
-    ACCORDION_HEADING_7 = (By.ID, "accordion__heading-7")
-    ACCORDION_PANEL_7 = (By.ID, "accordion__panel-7")
+    ACCORDIAN_TITLE_7 = (By.ID, "accordion__heading-7")
+    ACCORDIAN_CONTENT_7 = (By.ID, "accordion__panel-7")
+
+
+
+
 
     # Кнопка "Заказать" в роадмапе
     ORDER_BUTTON_ROADMAP = (By.XPATH, "//button[contains(@class, 'UltraBig')]")
