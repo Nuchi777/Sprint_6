@@ -1,5 +1,3 @@
-import time
-
 import pytest
 
 from pages.main_page import MainPage
@@ -14,7 +12,7 @@ class TestOrderPage:
         main_page = MainPage(driver)
         # открыли тестовую страницу
         main_page.open('https://qa-scooter.praktikum-services.ru/')
-        # кликнули по кнопке "Заказать" внизу страницы
+        # кликнули по кнопке "Заказать"
         main_page.click_order_button(button_name)
         # создали объект класса страницы оформления заказа "Для кого самокат"
         order_page = OrderPage(driver)

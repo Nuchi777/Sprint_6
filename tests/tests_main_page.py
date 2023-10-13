@@ -23,3 +23,9 @@ class TestMainPage:
         assert title_6 == "Можно ли отменить заказ?" and content_6 == "Да, пока самокат не привезли. Штрафа не будет, объяснительной записки тоже не попросим. Все же свои."
         assert title_7 == "Я жизу за МКАДом, привезёте?" and content_7 == "Да, обязательно. Всем самокатов! И Москве, и Московской области."
 
+    def test_logo_scooter(self, driver):
+        main_page = MainPage(driver)
+        main_page.open('https://qa-scooter.praktikum-services.ru/')
+        main_page.click_to_logo_scooter()
+        assert "Самокат" and "на пару дней" in main_page.check_home_header_visible()
+

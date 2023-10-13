@@ -10,11 +10,19 @@ class MainPage(BasePage):
 
     def click_order_button_header(self):
         self.element_is_clickable(self.locators.ORDER_BUTTON_HEADER).click()
+
     def click_order_button(self, button_name):
         if button_name == 'order_button_roadmap':
             self.click_order_button_roadmap()
         elif button_name == 'order_button_header':
             self.click_order_button_header()
+
+    def click_to_logo_scooter(self):
+        self.element_is_visible(self.locators.LOGO_SCOOTER).click()
+
+    def check_home_header_visible(self):
+        return self.element_is_visible(self.locators.HOME_HEADER_MAIN_PAGE_SCOOTER).text
+
 
     def check_accordian(self, accordian_num):
         accordian = {'0':

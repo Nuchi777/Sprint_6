@@ -31,8 +31,12 @@ class MainPageLocators:
     ORDER_BUTTON_ROADMAP = (By.XPATH, "//button[contains(@class, 'UltraBig')]")
     # Кнопка "Заказать" в шапке
     ORDER_BUTTON_HEADER = (By.XPATH, "//button[@class='Button_Button__ra12g']")
-
-    ORDER_BUTTON_LIST = [(By.XPATH, "//button[contains(@class, 'UltraBig')]"), (By.XPATH, "//button[@class='Button_Button__ra12g']")]
+    # логотип "Самокат" в шапке
+    LOGO_SCOOTER =(By.XPATH, "//a[@class='Header_LogoScooter__3lsAR']")
+    # логотип "Самокат" в шапке
+    LOGO_YANDEX = (By.XPATH, "//a[@class='Header_LogoYandex__3TSOI']")
+    # хедер на главной странице "Самокат на пару дней"
+    HOME_HEADER_MAIN_PAGE_SCOOTER = (By.XPATH, '//div[@class="Home_Header__iJKdX"]')
 
 
 class OrderPageLocators:
