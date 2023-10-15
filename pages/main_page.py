@@ -1,3 +1,5 @@
+import time
+
 from pages.base_page import BasePage
 from locators.locators import MainPageLocators
 
@@ -17,11 +19,20 @@ class MainPage(BasePage):
         elif button_name == 'order_button_header':
             self.click_order_button_header()
 
-    def click_to_logo_scooter(self):
+    def click_on_logo_scooter(self):
         self.element_is_visible(self.locators.LOGO_SCOOTER).click()
 
-    def check_home_header_visible(self):
+    def click_on_logo_yandex(self):
+        self.element_is_visible(self.locators.LOGO_YANDEX).click()
+
+    def check_home_page_scooter_visible(self):
         return self.element_is_visible(self.locators.HOME_HEADER_MAIN_PAGE_SCOOTER).text
+
+    def check_home_page_yandex_visible(self, index_page):
+        self.switch_to_window(index_page)
+        time.sleep(1)
+        return self.get_current_url()
+
 
 
     def check_accordian(self, accordian_num):

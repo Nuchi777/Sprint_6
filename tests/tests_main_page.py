@@ -26,6 +26,12 @@ class TestMainPage:
     def test_logo_scooter(self, driver):
         main_page = MainPage(driver)
         main_page.open('https://qa-scooter.praktikum-services.ru/')
-        main_page.click_to_logo_scooter()
-        assert "Самокат" and "на пару дней" in main_page.check_home_header_visible()
+        main_page.click_on_logo_scooter()
+        assert "Самокат" and "на пару дней" in main_page.check_home_page_scooter_visible()
 
+    def test_logo_yandex(self, driver):
+        main_page = MainPage(driver)
+        main_page.open('https://qa-scooter.praktikum-services.ru/')
+        main_page.click_on_logo_yandex()
+        current_url = main_page.check_home_page_yandex_visible(1)
+        assert current_url == 'https://dzen.ru/?yredirect=true'
