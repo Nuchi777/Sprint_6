@@ -5,7 +5,7 @@ from pages.order_page import OrderPage
 
 
 class TestOrderPage:
-    @allure.title('Проверка заказа самоката')
+    @allure.title('Проверка заказа самоката через кнопку:')
     @pytest.mark.parametrize('button_name', ['order_button_roadmap', 'order_button_header'])
     def test_order_scooter(self, driver, button_name):
         # создали объект класса главной страницы
