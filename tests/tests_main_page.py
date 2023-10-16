@@ -1,8 +1,10 @@
 from pages.main_page import MainPage
+import allure
 
 
 class TestMainPage:
 
+    @allure.title('Проверка выпадающего списка в разделе «Вопросы о важном»')
     def test_accordian(self, driver):
         # создали объект класса главной страницы
         main_page = MainPage(driver)
@@ -34,6 +36,7 @@ class TestMainPage:
         assert title_6 == "Можно ли отменить заказ?" and content_6 == "Да, пока самокат не привезли. Штрафа не будет, объяснительной записки тоже не попросим. Все же свои."
         assert title_7 == "Я жизу за МКАДом, привезёте?" and content_7 == "Да, обязательно. Всем самокатов! И Москве, и Московской области."
 
+    @allure.title('Проверка перехода по клику на логотип "Самокат"')
     def test_logo_scooter(self, driver):
         # создали объект класса главной страницы
         main_page = MainPage(driver)
@@ -44,6 +47,7 @@ class TestMainPage:
         # проверили, что загрузилась главная страница "Яндекс Самокат"
         assert "Самокат" and "на пару дней" in main_page.check_home_page_scooter_visible()
 
+    @allure.title('Проверка перехода по клику на логотип "Яндекс"')
     def test_logo_yandex(self, driver):
         # создали объект класса главной страницы
         main_page = MainPage(driver)

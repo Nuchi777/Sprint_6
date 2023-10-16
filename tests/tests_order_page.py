@@ -1,11 +1,11 @@
+import allure
 import pytest
-
 from pages.main_page import MainPage
 from pages.order_page import OrderPage
 
 
 class TestOrderPage:
-
+    @allure.title('Проверка заказа самоката')
     @pytest.mark.parametrize('button_name', ['order_button_roadmap', 'order_button_header'])
     def test_order_scooter(self, driver, button_name):
         # создали объект класса главной страницы
