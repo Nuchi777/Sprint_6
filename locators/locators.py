@@ -27,6 +27,10 @@ class MainPageLocators:
     ACCORDIAN_TITLE_7 = (By.ID, "accordion__heading-7")
     ACCORDIAN_CONTENT_7 = (By.ID, "accordion__panel-7")
 
+    ACCORDIAN_TITLE_LIST = (By.XPATH, "//div[@class='accordion__button']")
+    ACCORDIAN_CONTENT_LIST = (By.XPATH, "//div[@class='accordion__panel']")
+
+
     # Кнопка "Заказать" в роадмапе
     ORDER_BUTTON_ROADMAP = (By.XPATH, "//button[contains(@class, 'UltraBig')]")
     # Кнопка "Заказать" в шапке

@@ -1,3 +1,5 @@
+import pytest
+
 from pages.main_page import MainPage
 import allure
 
@@ -58,3 +60,13 @@ class TestMainPage:
         # проверили, что загрузилась главная страница "Яндекс Дзен"
         current_url = main_page.check_home_page_yandex_visible(1)
         assert current_url == 'https://dzen.ru/?yredirect=true'
+
+    @allure.title('Проверка перехода по клику на логотип "Яндекс"')
+    @pytest.mark.parametrize("title, content", [["Сколько это стоит? И как оплатить?", "Сутки — 400 рублей. Оплата курьеру — наличными или картой."], ["Хочу сразу несколько самокатов! Так можно?", "Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, можете просто сделать несколько заказов — один за другим."], ["Как рассчитывается время аренды?", "Допустим, вы оформляете заказ на 8 мая. Мы привозим самокат 8 мая в течение дня. Отсчёт времени аренды начинается с момента, когда вы оплатите заказ курьеру. Если мы привезли самокат 8 мая в 20:30, суточная аренда закончится 9 мая в 20:30."]])
+    def test_accordian_by_for(self, driver, title, content):
+        # создали объект класса главной страницы
+        main_page = MainPage(driver)
+        # открыли тестовую страницу
+        main_page.open('https://qa-scooter.praktikum-services.ru/')
+        # кликнули на лого "Яндекс" в шапге страницы
+        main_page.check_accordian_by_for(title, content)

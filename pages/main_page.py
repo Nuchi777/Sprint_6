@@ -39,7 +39,7 @@ class MainPage(BasePage):
     @allure.step('Проверка, что открылась главная страница "Дзен"')
     def check_home_page_yandex_visible(self, index_page):
         self.switch_to_window(index_page)
-        time.sleep(1)
+        self.element_is_present(self.locators.BUTTON_SEARCH_MAIN_PAGE_DZEN)
         return self.get_current_url()
 
 
@@ -64,3 +64,15 @@ class MainPage(BasePage):
         section_title.click()
         section_content = self.element_is_visible(accordian[accordian_num]['content']).text
         return section_title.text, section_content
+
+    def check_accordian_by_for(self, title, content):
+        for i in self.elements_is_visible(self.locators.ACCORDIAN_TITLE_LIST):
+            i.click()
+            title = i.text
+            for j in self.elements_is_visible(self.locators.ACCORDIAN_CONTENT_LIST):
+                content = j.text
+        assert title == title and content == content
+
+
+
+
