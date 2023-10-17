@@ -65,13 +65,15 @@ class MainPage(BasePage):
         section_content = self.element_is_visible(accordian[accordian_num]['content']).text
         return section_title.text, section_content
 
-    def check_accordian_by_for(self, title, content):
-        for i in self.elements_is_visible(self.locators.ACCORDIAN_TITLE_LIST):
-            i.click()
-            title = i.text
-            for j in self.elements_is_visible(self.locators.ACCORDIAN_CONTENT_LIST):
-                content = j.text
-        assert title == title and content == content
+    def click_accordian_title(self, title_locator):
+        self.element_is_visible(title_locator).click()
+
+    def check_accordian_content(self, content_locator):
+        content_text = self.find_element(content_locator).text
+        return content_text
+
+
+
 
 
 
