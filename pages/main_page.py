@@ -1,7 +1,4 @@
-import time
-
 import allure
-
 from pages.base_page import BasePage
 from locators.locators import MainPageLocators
 
@@ -41,29 +38,6 @@ class MainPage(BasePage):
         self.switch_to_window(index_page)
         self.element_is_present(self.locators.BUTTON_SEARCH_MAIN_PAGE_DZEN)
         return self.get_current_url()
-
-
-    def check_accordian(self, accordian_num):
-        accordian = {'0':
-                         {'title': self.locators.ACCORDIAN_TITLE_0, 'content': self.locators.ACCORDIAN_CONTENT_0},
-                     '1':
-                         {'title': self.locators.ACCORDIAN_TITLE_1, 'content': self.locators.ACCORDIAN_CONTENT_1},
-                     '2':
-                         {'title': self.locators.ACCORDIAN_TITLE_2, 'content': self.locators.ACCORDIAN_CONTENT_2},
-                     '3':
-                         {'title': self.locators.ACCORDIAN_TITLE_3, 'content': self.locators.ACCORDIAN_CONTENT_3},
-                     '4':
-                         {'title': self.locators.ACCORDIAN_TITLE_4, 'content': self.locators.ACCORDIAN_CONTENT_4},
-                     '5':
-                         {'title': self.locators.ACCORDIAN_TITLE_5, 'content': self.locators.ACCORDIAN_CONTENT_5},
-                     '6':
-                         {'title': self.locators.ACCORDIAN_TITLE_6, 'content': self.locators.ACCORDIAN_CONTENT_6},
-                     '7':
-                         {'title': self.locators.ACCORDIAN_TITLE_7, 'content': self.locators.ACCORDIAN_CONTENT_7}}
-        section_title = self.element_is_visible(accordian[accordian_num]['title'])
-        section_title.click()
-        section_content = self.element_is_visible(accordian[accordian_num]['content']).text
-        return section_title.text, section_content
 
     def click_accordian_title(self, title_locator):
         self.element_is_visible(title_locator).click()
